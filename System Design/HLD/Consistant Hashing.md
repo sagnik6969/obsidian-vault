@@ -1,4 +1,4 @@
-![](attachments/Gemini_Generated_Image_o4fcyro4fcyro4fc.png)
+![](../../attachments/Gemini_Generated_Image_o4fcyro4fcyro4fc%201.png)
 
 Consistent hashing is a fundamental concept in High-Level Design (HLD), particularly when building scalable distributed systems like distributed caches, databases, or load balancers.
 

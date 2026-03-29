@@ -8,5 +8,5 @@
   },
   "attachmentFolderPath": "attachments",
   "useMarkdownLinks": true,
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "relative"
 }
