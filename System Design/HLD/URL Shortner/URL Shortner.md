@@ -107,8 +107,3 @@ Here is how the request flows through the system:
 - **The Cache:** The Pareto Principle (80/20 rule) applies here—80% of clicks will go to 20% of the links (viral tweets, trending news). A caching layer like **Redis** or **Memcached** is critical. It stores the most frequently accessed URLs in memory, drastically reducing database load and speeding up redirect times.
     
 - **Rate Limiting:** To prevent malicious users from spamming the system and exhausting the ID pool, you would implement an API Gateway or rate limiter based on IP addresses or API keys.
-    
-
----
-
-Would you like me to dive deeper into how the **Distributed ID Generator** works to prevent duplicate IDs across multiple servers?
