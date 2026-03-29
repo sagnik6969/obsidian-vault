@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "System Design/HLD/CAP theorem.md",
+                "file": "System Design/HLD/URL Shortner/AWS architecture diagram.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CAP theorem"
+              "title": "AWS architecture diagram"
             }
           }
         ]
@@ -168,8 +168,11 @@
   },
   "active": "bcf9974cac055b24",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-03-29 12.39.34.excalidraw.md",
+    "System Design/HLD/URL Shortner/AWS architecture diagram.md",
     "System Design/HLD/URL Shortner/how the Distributed ID Generator works to prevent duplicate IDs across multiple servers?.md",
     "System Design/HLD/URL Shortner/URL Shortner.md",
+    "System Design/HLD/CAP theorem.md",
     "System Design/HLD/Untitled.md",
     "System Design/HLD/URL Shortner",
     "courses/KYT.md",
@@ -196,9 +199,6 @@
     "System Design/HLD/SAGA Pattern.md",
     "System Design/HLD/Strangler Pattern.md",
     "rcrm/issues/Space after comma (,) between Skills.md",
-    "System Design/HLD/Microservice applications.md",
-    "System Design/HLD/CAP theorem.md",
-    "System Design/HLD/Topics.md",
     "System Design/HLD",
     "attachments/Pasted image 20241231205948.png",
     "attachments/Pasted image 20241231204652.png",

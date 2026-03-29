@@ -153,3 +153,74 @@ Integrating stateful logic into stateless web servers introduces a few architect
 
 By decoupling the ID generation entirely from the database writes, your application servers can operate at blazing speeds, and your NoSQL database only has to worry about what it does best: storing and retrieving key-value pairs at scale.
 
+
+
+# Problem with above approach: If we want to implement auto scaling too much ids will be lost when number of servers are scaled down on low traffic?
+
+## 1. Does Wasting IDs Actually Matter?
+
+In most large-scale systems, the short answer is **no**.
+
+If you are using a 7-character Base62 string, your total namespace is $62^7$, which gives you roughly **3.5 trillion** unique combinations.
+
+Even if you auto-scale aggressively and waste 500,000 IDs every time a server spins down, you would have to destroy millions of servers before making a dent in a 3.5 trillion ID pool. Storage is cheap, and integer space is vast. Wasting IDs is generally considered an acceptable tax for gaining blazing-fast, lock-free performance on your write path.
+
+However, if your product requirement dictates keeping the URLs as short as possible for as long as possible (e.g., exactly 5 characters, which only yields ~916 million combinations), wasting large blocks becomes a massive problem.
+
+## 2. How to Mitigate ID Loss in an Auto-Scaled Environment
+
+If you want to minimize the bleeding of IDs without sacrificing the decoupled architecture, you have two primary strategies.
+
+#### Strategy A: Tune the Block Size (The Pragmatic Approach)
+
+You don't have to allocate a million IDs at once. You tune the block size to match your expected throughput and pod lifecycle.
+
+If a single server generates roughly 100 URLs per second, allocating a block of **5,000 IDs** means the server only hits ZooKeeper/etcd once every 50 seconds.
+
+- **Pros:** When the server scales down, you lose a maximum of 4,999 IDs—a negligible amount.
+    
+- **Cons:** It slightly increases the read load on your coordination service, but tools like ZooKeeper are explicitly built to handle tens of thousands of requests per second, so fetching a block every minute is barely a blip.
+    
+
+#### Strategy B: Graceful Shutdowns (The Engineering Approach)
+
+When your infrastructure (like Kubernetes) decides to scale down a server, it doesn't just instantly kill the process. It sends a `SIGTERM` signal, giving the application a brief window to clean up before the forceful `SIGKILL`.
+
+You can use application-level lifecycle events to catch this signal and write the remaining unused range back to ZooKeeper so the next server can claim it.
+
+Here is how that conceptually looks using modern async Python frameworks like FastAPI:
+
+Python
+
+```
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # --- STARTUP ---
+    # Fetch initial block from ZooKeeper when the pod spins up
+    await id_manager.fetch_new_range()
+    
+    yield # Application runs and serves requests here
+    
+    # --- SHUTDOWN ---
+    # Kubernetes sent SIGTERM. Pod is scaling down.
+    # Return the unused IDs back to the ZooKeeper pool.
+    unused_start = id_manager.current_id
+    unused_end = id_manager.max_id
+    await zookeeper_client.return_range(unused_start, unused_end)
+
+app = FastAPI(lifespan=lifespan)
+```
+
+- **Pros:** Zero wasted IDs. Maximum efficiency of your namespace.
+    
+- **Cons:** It introduces complexity. If the server crashes abruptly (OOM kill, hardware failure) instead of shutting down gracefully, those IDs are still lost.
+    
+
+## The Verdict
+
+For a URL shortener, the standard industry practice is to simply **tune the block size down** to a reasonable number (e.g., 1,000 to 10,000) and accept the minor losses during scale-down events. It keeps the system highly available and the codebase significantly simpler.
+
+
