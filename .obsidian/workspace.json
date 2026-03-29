@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "System Design/HLD/URL Shortner/AWS architecture diagram.md",
+                "file": "System Design/HLD/MongoDB vs Cassandra vs DynamoDB.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AWS architecture diagram"
+              "title": "MongoDB vs Cassandra vs DynamoDB"
             }
           }
         ]
@@ -168,8 +168,11 @@
   },
   "active": "bcf9974cac055b24",
   "lastOpenFiles": [
-    "attachments/Pasted image 20260329130036.png",
+    "System Design/HLD/Types of NO SQL database.md",
+    "System Design/HLD/MongoDB vs Cassandra vs DynamoDB.md",
+    "System Design/HLD/SQL vs NOSQL.md",
     "System Design/HLD/URL Shortner/AWS architecture diagram.md",
+    "attachments/Pasted image 20260329130036.png",
     "Excalidraw/Drawing 2026-03-29 12.39.34.excalidraw.md",
     "System Design/HLD/URL Shortner/how the Distributed ID Generator works to prevent duplicate IDs across multiple servers?.md",
     "System Design/HLD/URL Shortner/URL Shortner.md",
@@ -197,8 +200,6 @@
     "attachments/Untitled Diagram.drawio",
     "System Design/HLD/Event Sourcing Pattern.md",
     "System Design/HLD/CQRS Pattern.md",
-    "System Design/HLD/SAGA Pattern.md",
-    "System Design/HLD/Strangler Pattern.md",
     "System Design/HLD",
     "attachments/Pasted image 20241231205948.png",
     "attachments/Pasted image 20241231204652.png",
