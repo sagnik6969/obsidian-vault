@@ -1,0 +1,2 @@
+- It is very frequently paired with CQRS pattern.
+- 
