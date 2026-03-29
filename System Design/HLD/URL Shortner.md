@@ -49,8 +49,6 @@ We need two primary REST API endpoints:
         - _Design Note:_ **301 (Permanent Redirect)** means the browser caches the result, reducing load on your servers. **302 (Temporary Redirect)** forces the browser to hit your server every time, which is necessary if you want to track analytics (click rates).
             
 
----
-
 ## **4. Core Logic: The Shortening Algorithm**
 
 How do we generate a unique 6-to-8 character string? We generally use **Base62 Encoding** (A-Z, a-z, 0-9 = 62 characters). A 7-character Base62 string gives us 62^7 (~3.5 trillion) possible URLs, which is more than enough.
@@ -67,8 +65,6 @@ Instead of hashing the long URL (which can cause collisions), we assign a global
     
 - **Step 4:** Store the mapping: `zn9edcu` -> `https://longurl...`
     
-
----
 
 ## **5. High-Level Architecture**
 
