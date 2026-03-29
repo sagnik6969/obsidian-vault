@@ -15,20 +15,14 @@ Before jumping into the architecture, we need to define what the system actually
 - **High Availability:** The redirection service must have near 100% uptime. If it goes down, every link breaks.
 - **Low Latency:** Redirection should happen in milliseconds.
 - **Scale:** The system will be heavily read-biased (the industry standard assumption is a 10:1 to 100:1 read-to-write ratio).
-    
-
----
 
 ## **2. Back-of-the-Envelope Estimation**
 
 Let's assume the system generates **100 million new URLs per month** and has a **10:1 read/write ratio**.
 
 - **Writes:** 100 million URLs / month ≈ ~40 writes per second.
-    
 - **Reads:** 1 billion redirects / month ≈ ~400 reads per second.
-    
 - **Storage:** If we keep links for 10 years, that’s 12 billion records. If one record (Long URL, Short URL, Created_At) is roughly 500 bytes, we need about **6 Terabytes** of storage.
-    
 
 _Note: These numbers are relatively low for modern databases, meaning storage isn't our biggest bottleneck—read throughput is._
 
