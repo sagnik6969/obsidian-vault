@@ -45,5 +45,3 @@ NoSQL databases (like MongoDB, DynamoDB, or Cassandra) are engineered for scale,
 In modern system design, you rarely have to choose just one. Microservice architectures often use **polyglot persistence**, meaning you pick the right tool for the specific service.
 
 You might use a robust SQL database to manage your core user accounts and identity access, while simultaneously spinning up a NoSQL database to ingest a firehose of AI-generated event logs or fast-changing application state.
-
-Would you like to walk through a specific system architecture scenario to see how we'd evaluate the storage layer?

@@ -121,7 +121,3 @@ It does this by slightly altering the server's identifier string before hashing 
     
 
 Behind the scenes, the system maintains a routing table (often an array or a binary search tree) that links these virtual positions back to the actual physical IP address of Server A. When a key lands on position 37, the system checks the table, sees it belongs to `10.0.0.1`, and routes the data there.
-
----
-
-Would you like to see a simplified Python code snippet that demonstrates exactly how to build this routing table and look up a key?

@@ -6,10 +6,8 @@ Here is a detailed comparison of MongoDB, Apache Cassandra, and Amazon DynamoDB,
 
 MongoDB is a document-oriented NoSQL database. It stores data in flexible, JSON-like documents (technically BSON - Binary JSON), meaning fields can vary from document to document, and data structure can be changed over time.
 
-- **Architecture:** It uses a Primary-Secondary (Replica Set) architecture. All writes go to the primary node, which asynchronously replicates to secondary nodes.
-    
+- **Architecture:** It uses a Primary-Secondary (Replica Set) architecture. All writes go to the primary node, which asynchronously replicates to secondary nodes.  
 - **Querying:** It features a highly expressive query language (MQL) and a powerful Aggregation Framework that feels similar to SQL `GROUP BY` and `JOIN` operations.
-    
 
 **Apache Cassandra: The Wide-Column Store**
 

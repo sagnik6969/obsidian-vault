@@ -121,13 +121,12 @@ Graph databases are specifically built to handle complex relationships. Instead 
 - Need to write millions of logs/metrics per second? **Wide-Column**.
 - Need to analyze complex connections and networks? **Graph**.
 
-# Note for dynamo DB
-- its not strictly a key value store. its a **Wide-Column / Key-Value hybrid** that _does_ have document capabilities.
+# Note for dynamoDB
+- its not strictly a key value store. its a **Document / Key-Value hybrid** .
 
 DynamoDB natively supports JSON (it calls them `Map` and `List` data types). You actually _can_ filter query results based on nested JSON fields using something called `FilterExpressions`.
 
 **The catch:** You cannot build a Secondary Index (GSI) on a deeply nested JSON field. So, while DynamoDB can look inside the JSON to filter results before sending them to your application, it still has to read the whole item first. If you want blazing-fast indexed searches on a specific field, you have to pull that field out to the top level of the table.
-
 
 # What is partition key sort key and primary key in DynamoDB
 
