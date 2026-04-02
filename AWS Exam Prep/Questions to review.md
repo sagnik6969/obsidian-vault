@@ -2,11 +2,12 @@
 
 
 AWS Data sync
-AWS cloud adoption framework 134, 137, 142, 145, 178
-AWS well architected framework
+AWS cloud adoption framework 134, 137, 142, 145, 178, 257,258, 
+AWS well architected framework 268, 277
 
 AWS global accelerator
-AWS support plan => 236
+AWS support plan => 236, 265
+what is physical tape library
 
 
 ![](../attachments/Pasted%20image%2020260331221029.png)
@@ -26,6 +27,9 @@ AWS support plan => 236
 
 
 ![](../attachments/Pasted%20image%2020260401101322.png)
+![](../attachments/Pasted%20image%2020260401103437.png)
+![](../attachments/Pasted%20image%2020260401103915.png)
 
+![](../attachments/Pasted%20image%2020260401105158.png)
 
-100 -> 200 done
+100 -> 285 done
