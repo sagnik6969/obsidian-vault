@@ -22,6 +22,9 @@ If the communication breaks between distributed systems then also the applicatio
 
 >In Modern distributed systems we trade off between consistency and availability. Partition tolerance is always required. 
 
+Example: Mongodb => CP , Cassandra => AP
+
+
 
 
 
