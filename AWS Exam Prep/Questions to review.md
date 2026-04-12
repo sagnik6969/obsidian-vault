@@ -2,12 +2,14 @@
 
 
 AWS Data sync
-AWS cloud adoption framework 134, 137, 142, 145, 178, 257,258, 
+AWS cloud adoption framework 134, 137, 142, 145, 178, 257,258, 292, 295, 315, 325, 335, 344
 AWS well architected framework 268, 277
 
 AWS global accelerator
 AWS support plan => 236, 265
 what is physical tape library
+amazon polly => text to speech
+
 
 
 ![](../attachments/Pasted%20image%2020260331221029.png)
@@ -32,4 +34,21 @@ what is physical tape library
 
 ![](../attachments/Pasted%20image%2020260401105158.png)
 
-100 -> 285 done
+![](../attachments/Pasted%20image%2020260406093738.png)
+![](../attachments/Pasted%20image%2020260406093905.png)
+![](../attachments/Pasted%20image%2020260406094048.png)
+
+![](../attachments/Pasted%20image%2020260406094744.png)
+![](../attachments/Pasted%20image%2020260406094911.png)
+
+![](../attachments/Pasted%20image%2020260406095222.png)
+
+![](../attachments/Pasted%20image%2020260406095750.png)
+
+![](../attachments/Pasted%20image%2020260406095918.png)
+![](../attachments/Pasted%20image%2020260407094301.png)
+![](../attachments/Pasted%20image%2020260407095001.png)
+![](../attachments/Pasted%20image%2020260407095522.png)
+![](../attachments/Pasted%20image%2020260407101207.png)
+![](../attachments/Pasted%20image%2020260407101638.png)
+100 -> 350 done
